@@ -6,14 +6,11 @@ import {
     WebSocketServer,
 } from '@nestjs/websockets';
 import { MessagesService } from '../services/messages.service';
-// ? import { UseGuards } from '@nestjs/common';
-// ? import { AuthSocketGuard } from '../../auth/auth.socket.guard';
 import { Server, Socket } from 'socket.io';
 import { MessageDto } from '../dto';
 import { ClassSerializerInterceptor, UseInterceptors } from '@nestjs/common';
 
 @UseInterceptors(ClassSerializerInterceptor)
-// ? @UseGuards(AuthSocketGuard)
 @WebSocketGateway(80, {
     cors: {
         origin: 'http://localhost:3000',

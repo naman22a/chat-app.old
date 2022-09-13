@@ -53,7 +53,14 @@ const Chat: NextPage = () => {
 
             <Flex flexDirection="column">
                 {messages.map(message => (
-                    <Text key={message.id}>
+                    <Text
+                        key={message.id}
+                        textAlign={
+                            message.user.id === data?.user?.id
+                                ? 'right'
+                                : 'left'
+                        }
+                    >
                         [{message.user.username}]: {message.text}
                     </Text>
                 ))}
