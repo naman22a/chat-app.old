@@ -13,7 +13,6 @@ import { redis } from './redis';
 declare module 'express-session' {
     interface SessionData {
         userId: number;
-        sessionId: number;
     }
 }
 
